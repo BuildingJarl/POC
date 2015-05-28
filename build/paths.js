@@ -10,7 +10,6 @@ module.exports = {
   style: 'public/styles/**/*.css',
   output: outputRoot,
   sourceMapRelativePath: '../' + appRoot,
-  doc:'public//doc',
   e2eSpecsSrc: 'public/test/e2e/src/*.js',
   e2eSpecsDist: 'public/test/e2e/dist/'
 };

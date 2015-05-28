@@ -5,8 +5,9 @@ var karma = require('karma').server;
  * Run test once and exit
  */
 gulp.task('test', function (done) {
+    
     karma.start({
-        configFile: __dirname + '/../../karma.conf.js',
+        configFile: __dirname + '/../../public/karma.conf.js',
         singleRun: true
     }, function(e) {
         done();
@@ -18,7 +19,7 @@ gulp.task('test', function (done) {
  */
 gulp.task('tdd', function (done) {
     karma.start({
-        configFile: __dirname + '/../../karma.conf.js'
+        configFile: __dirname + '/../../public/karma.conf.js'
     }, function(e) {
         done();
     });
