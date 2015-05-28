@@ -13,7 +13,7 @@ exports.config = {
   specs: ['test/e2e/dist/*.js'],
 
   plugins: [{
-    path: 'public/aurelia.protractor.js'
+    path: 'aurelia.protractor.js'
   }],
 
 
