@@ -25,11 +25,11 @@ publicRouter.get('/', function*(next) {
 	this.body = yield this.render('index');
 });
 
-app.use( bodyParser( { jsonLimit: 10 } ) );
+app.use( bodyParser() );
 app.use( publicRouter.middleware() );
 
 // listen
-var port = process.env.PORT || 9000;
+var port = process.env.PORT || 4000;
 var server = app.listen(port, function () {
     console.log('Listening on port %d', server.address().port);
 });
