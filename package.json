@@ -71,6 +71,7 @@
     "koa": "^0.21.0",
     "koa-body-parser": "^1.1.2",
     "koa-common": "^1.2.0",
+    "koa-favicon": "^1.2.0",
     "koa-render": "^0.2.1",
     "koa-router": "^5.0.1"
   }
