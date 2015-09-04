@@ -8,7 +8,7 @@ var bodyParser = require('koa-body-parser');
 var koa = require('koa');
 var app = koa();
 
-app.use( common.logger('dev') );
+//app.use( common.logger('dev') );
 app.use( favicon( __dirname + '/public/favicon.ico' ) );
 
 var publicRouter = new router();

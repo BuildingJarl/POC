@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
-
+var browserSync = require('browser-sync');
 // to create a dev server instance
 // at http://localhost:9000
 gulp.task('serve', ['build'], function( done ) {

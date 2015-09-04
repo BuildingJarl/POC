@@ -1,69 +1,54 @@
-System.register(['aurelia-framework'], function (_export) {
-  'use strict';
+System.register(['gooy/aurelia-compiler'], function (_export) {
+	'use strict';
 
-  var computedFrom, Welcome, UpperValueConverter;
+	var Compiler, Welcome;
 
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  return {
-    setters: [function (_aureliaFramework) {
-      computedFrom = _aureliaFramework.computedFrom;
-    }],
-    execute: function () {
-      Welcome = (function () {
-        function Welcome() {
-          _classCallCheck(this, Welcome);
+	return {
+		setters: [function (_gooyAureliaCompiler) {
+			Compiler = _gooyAureliaCompiler.Compiler;
+		}],
+		execute: function () {
+			Welcome = (function () {
+				_createClass(Welcome, null, [{
+					key: 'inject',
+					value: [Element, Compiler],
+					enumerable: true
+				}]);
 
-          this.heading = 'Welcome to the Aurelia Navigation App!';
-          this.firstName = 'John';
-          this.lastName = 'Doe';
-          this.previousValue = this.fullName;
-        }
+				function Welcome(element, compiler) {
+					_classCallCheck(this, Welcome);
 
-        _createClass(Welcome, [{
-          key: 'fullName',
-          get: function () {
-            return '' + this.firstName + ' ' + this.lastName;
-          }
-        }, {
-          key: 'submit',
-          value: function submit() {
-            this.previousValue = this.fullName;
-            alert('Welcome, ' + this.fullName + '!');
-          }
-        }, {
-          key: 'canDeactivate',
-          value: function canDeactivate() {
-            if (this.fullName !== this.previousValue) {
-              return confirm('Are you sure you want to leave?');
-            }
-          }
-        }]);
+					this.element = element;
+					this.compiler = compiler;
+				}
 
-        return Welcome;
-      })();
+				_createClass(Welcome, [{
+					key: 'attached',
+					value: function attached() {
 
-      _export('Welcome', Welcome);
+						var el = document.createElement('code-editor');
+						el.setAttribute('class', 'globalExecutionContext');
 
-      UpperValueConverter = (function () {
-        function UpperValueConverter() {
-          _classCallCheck(this, UpperValueConverter);
-        }
+						var halfWidth = 150;
+						var halfHeight = 150;
 
-        _createClass(UpperValueConverter, [{
-          key: 'toView',
-          value: function toView(value) {
-            return value && value.toUpperCase();
-          }
-        }]);
+						el.style.top = window.innerHeight / 2 - halfWidth + 'px';
+						el.style.left = window.innerWidth / 2 - halfHeight + 'px';
 
-        return UpperValueConverter;
-      })();
+						document.getElementById('blablabla').appendChild(el);
+						this.compiler.compile(el);
+					}
+				}]);
 
-      _export('UpperValueConverter', UpperValueConverter);
-    }
-  };
+				return Welcome;
+			})();
+
+			_export('Welcome', Welcome);
+		}
+	};
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlbGNvbWUuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O29CQUVhLE9BQU8sRUEwQlAsbUJBQW1COzs7Ozs7Ozt1Q0E1QnhCLFlBQVk7OztBQUVQLGFBQU87aUJBQVAsT0FBTztnQ0FBUCxPQUFPOztlQUNsQixPQUFPLEdBQUcsd0NBQXdDO2VBQ2xELFNBQVMsR0FBRyxNQUFNO2VBQ2xCLFFBQVEsR0FBRyxLQUFLO2VBQ2hCLGFBQWEsR0FBRyxJQUFJLENBQUMsUUFBUTs7O3FCQUpsQixPQUFPOztlQVVOLFlBQUU7QUFDWix3QkFBVSxJQUFJLENBQUMsU0FBUyxTQUFJLElBQUksQ0FBQyxRQUFRLENBQUc7V0FDN0M7OztpQkFFSyxrQkFBRTtBQUNOLGdCQUFJLENBQUMsYUFBYSxHQUFHLElBQUksQ0FBQyxRQUFRLENBQUM7QUFDbkMsaUJBQUssZUFBYSxJQUFJLENBQUMsUUFBUSxPQUFJLENBQUM7V0FDckM7OztpQkFFWSx5QkFBRztBQUNkLGdCQUFJLElBQUksQ0FBQyxRQUFRLEtBQUssSUFBSSxDQUFDLGFBQWEsRUFBRTtBQUN4QyxxQkFBTyxPQUFPLENBQUMsaUNBQWlDLENBQUMsQ0FBQzthQUNuRDtXQUNGOzs7ZUF2QlUsT0FBTzs7O3lCQUFQLE9BQU87O0FBMEJQLHlCQUFtQjtpQkFBbkIsbUJBQW1CO2dDQUFuQixtQkFBbUI7OztxQkFBbkIsbUJBQW1COztpQkFDeEIsZ0JBQUMsS0FBSyxFQUFDO0FBQ1gsbUJBQU8sS0FBSyxJQUFJLEtBQUssQ0FBQyxXQUFXLEVBQUUsQ0FBQztXQUNyQzs7O2VBSFUsbUJBQW1COzs7cUNBQW5CLG1CQUFtQiIsImZpbGUiOiJ3ZWxjb21lLmpzIiwic291cmNlUm9vdCI6Ii4uL3B1YmxpYy9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlbGNvbWUuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O2VBRWEsT0FBTzs7Ozs7Ozs7bUNBRlosUUFBUTs7O0FBRUgsVUFBTztpQkFBUCxPQUFPOztZQUNILENBQUMsT0FBTyxFQUFFLFFBQVEsQ0FBQzs7OztBQUV4QixhQUhDLE9BQU8sQ0FHUCxPQUFPLEVBQUUsUUFBUSxFQUFFOzJCQUhuQixPQUFPOztBQUlsQixTQUFJLENBQUMsT0FBTyxHQUFHLE9BQU8sQ0FBQztBQUN2QixTQUFJLENBQUMsUUFBUSxHQUFHLFFBQVEsQ0FBQztLQUN6Qjs7aUJBTlcsT0FBTzs7WUFRWCxvQkFBRzs7QUFFVixVQUFJLEVBQUUsR0FBRyxRQUFRLENBQUMsYUFBYSxDQUFDLGFBQWEsQ0FBQyxDQUFDO0FBQy9DLFFBQUUsQ0FBQyxZQUFZLENBQUcsT0FBTyxFQUFFLHdCQUF3QixDQUFFLENBQUM7O0FBRXRELFVBQUksU0FBUyxHQUFHLEdBQUcsQ0FBQztBQUNwQixVQUFJLFVBQVUsR0FBRyxHQUFHLENBQUM7O0FBR3JCLFFBQUUsQ0FBQyxLQUFLLENBQUMsR0FBRyxHQUFHLEFBQUMsQUFBQyxNQUFNLENBQUMsV0FBVyxHQUFHLENBQUMsR0FBSSxTQUFTLEdBQUssSUFBSSxDQUFDO0FBQzlELFFBQUUsQ0FBQyxLQUFLLENBQUMsSUFBSSxHQUFHLEFBQUMsQUFBQyxNQUFNLENBQUMsVUFBVSxHQUFHLENBQUMsR0FBSSxVQUFVLEdBQUssSUFBSSxDQUFDOztBQUcvRCxjQUFRLENBQUMsY0FBYyxDQUFDLFdBQVcsQ0FBQyxDQUFDLFdBQVcsQ0FBQyxFQUFFLENBQUMsQ0FBQztBQUNyRCxVQUFJLENBQUMsUUFBUSxDQUFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQTtNQUN6Qjs7O1dBdkJXLE9BQU8iLCJmaWxlIjoid2VsY29tZS5qcyIsInNvdXJjZVJvb3QiOiIuLi9wdWJsaWMvc3JjLyJ9

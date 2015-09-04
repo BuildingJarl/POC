@@ -1,33 +1,27 @@
-import {computedFrom} from 'aurelia-framework';
+import {Compiler} from 'gooy/aurelia-compiler';
 
-export class Welcome{
-  heading = 'Welcome to the Aurelia Navigation App!';
-  firstName = 'John';
-  lastName = 'Doe';
-  previousValue = this.fullName;
+export class Welcome {
+	static inject = [Element, Compiler];
 
-  //Getters can't be observed with Object.observe, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below.
-  //@computedFrom('firstName', 'lastName')
-  get fullName(){
-    return `${this.firstName} ${this.lastName}`;
-  }
+	constructor(element, compiler) {
+		this.element = element;
+		this.compiler = compiler;
+	}
 
-  submit(){
-    this.previousValue = this.fullName;
-    alert(`Welcome, ${this.fullName}!`);
-  }
+	attached() {
+				
+		var el = document.createElement('code-editor');
+		el.setAttribute ( 'class', 'globalExecutionContext' );
 
-  canDeactivate() {
-    if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
-    }
-  }
-}
+		var halfWidth = 150;
+		var halfHeight = 150;
+		
 
-export class UpperValueConverter {
-  toView(value){
-    return value && value.toUpperCase();
-  }
+		el.style.top = ((window.innerHeight / 2) - halfWidth ) + 'px';
+		el.style.left = ((window.innerWidth / 2) - halfHeight ) + 'px';
+
+		
+		document.getElementById('blablabla').appendChild(el);
+		this.compiler.compile(el)
+	}
 }
