@@ -6,48 +6,26 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style type="text/css">
-
-    .globalExecutionContext {
-      width: 300px;
-      height: 300px;
-
-      border-radius: 20px;
-
-      background-color: black;
-      border: 1px solid green;
-
-      position: absolute;
-    }
-
-    .editor-container {
-
-    }
-
-    #blablabla {
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-
-      border: 1px solid black;
-    }
-  </style>
-
   </head>
-  <!--<body aurelia-app="app-main">
-    <div class="splash">
-      <i class="fa fa-spinner fa-spin"></i>
-    </div>
-
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
-   
-  </body>
-  -->
   <body>
-    <style type="text/css"></style>
+    <style type="text/css">
+      #editorPanel {
+        width: 50%;
+        position:absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+      }
+
+      #visPanel {
+        width: 50%;
+        position:absolute;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+      }
+
+    </style>
    
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
@@ -55,6 +33,15 @@
       System.import('main');
     </script>
 
-    <div id="blablabla"></div>
+    <div id="viewport">
+      <div id="editorPanel">
+        
+      </div>
+
+      <div id="visPanel">
+        
+      </div>
+
+    </div>
   </body>
 </html>
