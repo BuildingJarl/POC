@@ -41,10 +41,12 @@ container.addEventListener('click', function() {
 	console.log('CLICKS')
 
 	if(expanded !== true) {
-		container.style.width = '800px';
-		container.style.height = '900px';
+		//container.style.width = '800px';
+		//container.style.height = '900px';
 
-		editor.changeFont(12);
+		//editor.changeFont(12);
+
+		container.className += ' small';
 
 		setTimeout( function() {
 			editor.resize();
@@ -52,10 +54,10 @@ container.addEventListener('click', function() {
 		}, 550)
 		
 	} else {
-		container.style.width = '200px';
-		container.style.height = '300px';
+		//container.style.width = '200px';
+		//container.style.height = '300px';
 
-		editor.changeFont(4);
+		//editor.changeFont(4);
 		
 		expanded = false;
 	}
