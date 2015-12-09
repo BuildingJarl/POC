@@ -13,7 +13,7 @@
   <body>
     <style type="text/css">
 
-      #viewport1 {
+      #viewport {
         width: 100%;
         position: absolute;
         right: 0px;
@@ -21,24 +21,36 @@
         top: 0px;
         bottom: 0px;
       }
-      #viewport2 {
-        width: 100%;
-        position: absolute;
-        right: 0px;
-        left:0px;
-        top: 0px;
-        bottom: 0px;
-        z-index: -1;
+      
+      .frameContainer {
+
+        width: 650px;
+        height: 300px;
+
+        border-style: none;
       }
 
-      .number {
-        font-size: 100px;
-        font-family: 'Alegreya SC', serif;
+      .container {
+        width: 100%;
+        height: 100%;
+
+        background-color: blue;
       }
-      .editor {
-        width: 500px;
-        height: 800px;
+
+      .file {
+        width: 650px;
+        height: 300px;
+        transition: all .5s ease-in-out;
       }
+      .file2 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .overview {
+        -webkit-transform: scale(0.5);
+      }
+
     </style>
    
     <script src="jspm_packages/system.js"></script>
@@ -47,12 +59,7 @@
       System.import('main');
     </script>
 
-    <!--
-    <div id="viewport1">
-
-    </div>
-    -->
-    <div id="viewport2">
+    <div id="viewport">
 
     </div>
 
