@@ -45,8 +45,12 @@ container.addEventListener('click', function() {
 		container.style.height = '900px';
 
 		editor.changeFont(12);
-		editor.resize();
-		expanded = true;
+
+		setTimeout( function() {
+			editor.resize();
+			expanded = true;
+		}, 550)
+		
 	} else {
 		container.style.width = '200px';
 		container.style.height = '300px';
