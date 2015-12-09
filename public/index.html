@@ -8,37 +8,29 @@
 
     <script src="jspm_packages/github/mrdoob/three.js@r71/build/three.js"></script>
     <script src="jspm_packages/github/mrdoob/three.js@r71/examples/js/renderers/CSS3DRenderer.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html-gl/0.3.1/htmlgl.js"></script>-->
 
   </head>
   <body>
     <style type="text/css">
 
-      #viewport1 {
+      #viewport {
         width: 100%;
+        height: 100%;
         position: absolute;
         right: 0px;
         left:0px;
         top: 0px;
         bottom: 0px;
-      }
-      #viewport2 {
-        width: 100%;
-        position: absolute;
-        right: 0px;
-        left:0px;
-        top: 0px;
-        bottom: 0px;
-        z-index: -1;
+
       }
 
-      .number {
-        font-size: 100px;
-        font-family: 'Alegreya SC', serif;
+      #my-editor {
+        width: 200px;
+        height: 300px;
+        
       }
-      .editor {
-        width: 500px;
-        height: 800px;
-      }
+
     </style>
    
     <script src="jspm_packages/system.js"></script>
@@ -47,13 +39,8 @@
       System.import('main');
     </script>
 
-    <!--
-    <div id="viewport1">
-
-    </div>
-    -->
-    <div id="viewport2">
-
+    <div id="viewport">
+      <div id="my-editor"></div>
     </div>
 
   </body>

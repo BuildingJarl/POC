@@ -32,6 +32,7 @@ System.config({
     "esprima": "github:jquery/esprima@2.4.1",
     "font-awesome": "npm:font-awesome@4.4.0",
     "gooy/aurelia-compiler": "github:gooy/aurelia-compiler@0.0.5",
+    "text": "github:systemjs/plugin-text@0.0.4",
     "three.js": "github:mrdoob/three.js@r71",
     "traceur": "github:jmcriffey/bower-traceur@0.0.88",
     "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88",
