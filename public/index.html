@@ -6,25 +6,39 @@
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script src="jspm_packages/github/mrdoob/three.js@r71/build/three.js"></script>
+    <script src="jspm_packages/github/mrdoob/three.js@r71/examples/js/renderers/CSS3DRenderer.js"></script>
+
   </head>
   <body>
     <style type="text/css">
-      #editorPanel {
-        width: 50%;
-        position:absolute;
-        left: 0px;
-        top: 0px;
-        bottom: 0px;
-      }
 
-      #visPanel {
-        width: 50%;
-        position:absolute;
+      #viewport1 {
+        width: 100%;
+        position: absolute;
         right: 0px;
+        left:0px;
         top: 0px;
         bottom: 0px;
       }
+      #viewport2 {
+        width: 100%;
+        position: absolute;
+        right: 0px;
+        left:0px;
+        top: 0px;
+        bottom: 0px;
+        z-index: -1;
+      }
 
+      .number {
+        font-size: 100px;
+        font-family: 'Alegreya SC', serif;
+      }
+      .editor {
+        width: 500px;
+        height: 800px;
+      }
     </style>
    
     <script src="jspm_packages/system.js"></script>
@@ -33,15 +47,14 @@
       System.import('main');
     </script>
 
-    <div id="viewport">
-      <div id="editorPanel">
-        
-      </div>
-
-      <div id="visPanel">
-        
-      </div>
+    <!--
+    <div id="viewport1">
 
     </div>
+    -->
+    <div id="viewport2">
+
+    </div>
+
   </body>
 </html>
